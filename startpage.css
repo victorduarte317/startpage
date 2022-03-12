@@ -1,0 +1,87 @@
+body, .container, section, .list-group-item {
+    background-color: #212121;
+    margin: 0;
+    padding: 0;
+}
+
+div.font {
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 8em;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+ul li a {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    margin: 0 10px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    z-index: 1;
+    left: -40px;
+    top: -160px;
+}
+
+ul li a .icon {
+    position: relative;
+    color: #303030;
+    transition: .5s;
+    z-index: 3;
+}
+
+ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+ul li a::before {
+    content: ""; /* Aqui define o conteúdo que aparece quando a animação sobe*/
+    position: absolute;
+    top: 100%; /* Aqui muda a direção que a animação vai */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: .5s;
+    z-index: 2;
+}
+
+ul li a:hover::before {
+    top: 0; /* Aqui "chama" a animação */
+}
+
+ul li:nth-child(1) a::before {
+    background-color: rgb(58, 195, 241);
+}
+
+ul li:nth-child(3) a::before {
+    background-color: orangered;
+}
+
+ul li:nth-child(4) a:before {
+    background-color: purple;
+}
